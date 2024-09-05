@@ -62,6 +62,18 @@ void deletionAtHead(Node* &head){
     delete toDelete;
 }
 
+bool search(Node* head, int key){
+    Node* temp = head;
+
+    while(temp != NULL){
+        if(temp->data == key){
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
+
 void display(Node* head){
 
     Node* temp = head;
@@ -86,7 +98,14 @@ int main()
     insertAtHead(head, 9);
     insertAtHead(head, 100);
 
-    deletion(head, 2);
+    // deletion(head, 2);
+
+    if(search(head, 2)){
+        cout << "Key found" << endl;
+    }
+    else{
+        cout << "key not found" << endl;
+    }
 
 
     display(head);
