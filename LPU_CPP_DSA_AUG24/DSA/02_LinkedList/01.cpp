@@ -30,7 +30,6 @@ void insertAtTail(Node* &head, int val){
 
     temp->next = n;
 
-
 }
 
 void insertAtHead(Node* &head, int val){
