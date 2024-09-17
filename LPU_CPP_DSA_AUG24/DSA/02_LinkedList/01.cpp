@@ -73,6 +73,26 @@ bool search(Node* head, int key){
     return false;
 }
 
+Node* removeDuplicatedFromSorted(Node *head){
+    if(head == NULL) return NULL;
+
+    Node* curr = head;
+
+    while(curr!= NULL){
+        if(curr->next != NULL && curr->data == curr->next->data){
+            //delete the next duplicate node
+            curr->next = curr->next->next;
+            delete curr->next;
+        }
+        else{
+            curr = curr->next;
+        }
+    }
+
+    return head;
+}
+
+
 void display(Node* head){
 
     Node* temp = head;
@@ -84,6 +104,23 @@ void display(Node* head){
     cout << "NULL" << endl;
 
     
+}
+
+Node* reverse(Node* &head){
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next;
+
+    while(curr!= NULL){
+        next = curr->next;
+        curr->next = prev;
+
+        prev = curr;
+        curr = next;
+
+    }
+
+    return prev;
 }
  
 int main()

@@ -1,10 +1,2 @@
-A
-B
-A
-B
-C
-A
-B
-C
-D
+testing with line 1
 testing with line 2
