@@ -4,6 +4,7 @@
         "iostream": "cpp",
         "fstream": "cpp",
         "__config": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "stack": "cpp"
     }
 }

@@ -109,7 +109,7 @@ void display(Node* head){
 Node* reverse(Node* &head){
     Node* prev = NULL;
     Node* curr = head;
-    Node* next;
+    Node* next = NULL;
 
     while(curr!= NULL){
         next = curr->next;
@@ -119,6 +119,26 @@ Node* reverse(Node* &head){
         curr = next;
 
     }
+
+    return prev;
+}
+
+Node* kReverse(Node* &head, int k){
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next = NULL;
+    int count = 0;
+
+    while(curr!= NULL && count < k){
+        next = curr->next;
+        curr->next = prev;
+
+        prev = curr;
+        curr = next;
+        count++;
+    }
+
+    head->next = kReverse(next, k);
 
     return prev;
 }
