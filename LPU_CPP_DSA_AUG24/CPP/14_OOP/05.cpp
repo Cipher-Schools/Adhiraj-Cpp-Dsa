@@ -19,12 +19,16 @@ class PublicDerieved : public Base{
     //y is protected
     //z is not accessible
 
+
+
 };
  
 class ProtectedDerieved : protected Base{
     //x is protected
     //y is protected
     //z is not accessible
+
+
 };
 
 class PrivateDerieved : private Base{
@@ -32,14 +36,15 @@ class PrivateDerieved : private Base{
     //y is private
     //z is not accessible
 
-    // void print(){
-    //     cout << z;
-    // }
+    void print(){
+        cout << x;
+    }
+
 };
 
 int main()
 {
     PrivateDerieved pd1;
 
-    // pd1.x;
+    pd1.x;
 }
