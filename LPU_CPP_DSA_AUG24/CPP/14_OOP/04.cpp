@@ -30,6 +30,8 @@ class MasterZombie{
         power -= 10;
     }
 
+    virtual void infection() = 0;
+
 
 };
 
@@ -40,6 +42,8 @@ class zombie1 : public MasterZombie{
     void fly(){
         cout << name;
     }
+
+
 };
 
 class zombie2 : public MasterZombie{
@@ -62,7 +66,7 @@ int main()
 
     // z1.name = "John";
 
-    MasterZombie *m1 = new zombie2();
-    m1->changeHealth();
+    // MasterZombie *m1 = new zombie2();
+    // m1->changeHealth();
     
 }
