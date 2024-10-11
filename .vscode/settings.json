@@ -5,6 +5,7 @@
         "fstream": "cpp",
         "__config": "cpp",
         "istream": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "map": "cpp"
     }
 }
