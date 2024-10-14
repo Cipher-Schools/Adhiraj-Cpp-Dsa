@@ -6,6 +6,7 @@
         "__config": "cpp",
         "istream": "cpp",
         "stack": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "stdexcept": "cpp"
     }
 }
