@@ -1,0 +1,1 @@
+out << "Statement 2" << endl;
