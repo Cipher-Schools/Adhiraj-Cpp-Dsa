@@ -31,6 +31,18 @@ Node* insertBST(Node* root, int val){
 
     return root;
 }
+
+Node* searchInBST(Node* root, int key){
+    //base case
+    if(root == NULL) return NULL;
+
+    if(root->data == key) return root;
+
+    //data > key
+    if(root->data > key) return searchInBST(root->left, key);
+
+    return searchInBST(root->right, key);
+}
  
 void inOrder(Node* root){
     if(root==NULL) return;
