@@ -52,3 +52,39 @@
 
 
 // }
+
+
+
+//-----------------------------------------------
+
+// https://www.naukri.com/code360/problems/flatten-bst-to-a-sorted-list_1169459?leftPanelTabValue=PROBLEM
+
+// void inorder(TreeNode<int>* root, vector<int> &vec){
+//     if(root==NULL) return;
+
+//     inorder(root->left, vec);
+//     vec.push_back(root->data);
+//     inorder(root->right, vec);
+// }
+
+// TreeNode<int>* flatten(TreeNode<int>* root)
+// {
+//     vector<int> inorderVal;
+//     inorder(root, inorderVal);
+
+//     TreeNode<int>* newRoot = new TreeNode<int>(inorderVal[0]);
+//     TreeNode<int>* curr = newRoot;
+
+//     for(int i = 1; i < inorderVal.size(); i++){
+//         TreeNode<int>* temp = new TreeNode<int>(inorderVal[i]);
+//         curr->left = NULL;
+//         curr->right = temp;
+//         curr = temp;
+//     }
+
+//     //for last node
+//     curr->left = NULL;
+//     curr->right = NULL;
+
+//     return newRoot;
+// }

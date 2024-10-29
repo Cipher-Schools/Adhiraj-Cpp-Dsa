@@ -7,6 +7,7 @@
         "istream": "cpp",
         "stack": "cpp",
         "map": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "vector": "cpp"
     }
 }
