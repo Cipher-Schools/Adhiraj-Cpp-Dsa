@@ -1,64 +1,76 @@
-//Right View, LCA
+// Right View, LCA
 
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 using namespace std;
 
-class Node{
-    public:
+class Node
+{
+public:
     int data;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
-    Node(int val){
+    Node(int val)
+    {
         data = val;
         left = NULL;
         right = NULL;
     }
 };
 
-void rightView(Node* root){
-    if(root==NULL) return;
+void rightView(Node *root)
+{
+    if (root == NULL)
+        return;
 
-    queue<Node*> q;
+    queue<Node *> q;
     q.push(root);
 
-    while(!q.empty()){
-        //we will not add null in queue, we will calculate the size of the queue and check how many nodes are stored and traverse over it
+    while (!q.empty())
+    {
+        // we will not add null in queue, we will calculate the size of the queue and check how many nodes are stored and traverse over it
         int size = q.size();
 
-        for(int i = 0; i < size; i++){
-            //create a curr pointer which will start from the front/beginning of the queue
-            Node* curr = q.front();
+        for (int i = 0; i < size; i++)
+        {
+            // create a curr pointer which will start from the front/beginning of the queue
+            Node *curr = q.front();
             q.pop();
 
-            if(i == size -1){
+            if (i == size - 1)
+            {
                 cout << curr->data << " ";
             }
 
-            //then we will go on the left and right of the current node
+            // then we will go on the left and right of the current node
 
-            if(curr->left){
+            if (curr->left)
+            {
                 q.push(curr->left);
             }
-            if(curr->right){
+            if (curr->right)
+            {
                 q.push(curr->right);
             }
         }
     }
-
 }
 
-bool getPath(Node* root, int key, vector<int>& path){
+bool getPath(Node *root, int key, vector<int> &path)
+{
 
-    if(root==NULL) return false;
+    if (root == NULL)
+        return false;
 
     path.push_back(root->data);
-    if(root->data == key){
+    if (root->data == key)
+    {
         return true;
     }
 
-    if(getPath(root->left, key, path) || getPath(root->right, key , path)){
+    if (getPath(root->left, key, path) || getPath(root->right, key, path))
+    {
         return true;
     }
 
@@ -66,25 +78,29 @@ bool getPath(Node* root, int key, vector<int>& path){
     return false;
 }
 
-int LowestCommonAncestor(Node* root, int node1, int node2){
+int LowestCommonAncestor(Node *root, int node1, int node2)
+{
     vector<int> path1;
     vector<int> path2;
 
-    if(!getPath(root, node1, path1) && !getPath(root, node2, path2)){
+    if (!getPath(root, node1, path1) && !getPath(root, node2, path2))
+    {
         return -1;
     }
 
     int pathChange;
-    for(pathChange = 0; pathChange < path1.size() && path2.size(); pathChange++){
-        if(path1[pathChange]!= path2[pathChange]) break;
+    for (pathChange = 0; pathChange < path1.size() && path2.size(); pathChange++)
+    {
+        if (path1[pathChange] != path2[pathChange])
+            break;
     }
 
     return path1[pathChange - 1];
 }
- 
+
 int main()
 {
-      Node* root = new Node(1);
+    Node *root = new Node(1);
 
     root->left = new Node(2);
     root->right = new Node(3);
@@ -96,11 +112,11 @@ int main()
 
     // rightView(root);
 
+    int lca = LowestCommonAncestor(root, 6, 7);
 
+    if (lca == -1)
+        cout << "No LCA" << endl;
 
-    int lca = LowestCommonAncestor(root, 6,7);
-
-    if(lca == -1) cout << "No LCA" << endl;
-    
-    else cout << "LCA : " << lca << endl;
+    else
+        cout << "LCA : " << lca << endl;
 }
