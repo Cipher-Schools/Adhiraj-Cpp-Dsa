@@ -8,6 +8,7 @@
         "stack": "cpp",
         "map": "cpp",
         "stdexcept": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "list": "cpp"
     }
 }
