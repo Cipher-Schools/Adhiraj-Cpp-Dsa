@@ -28,6 +28,11 @@ class PlayerStats{
     }
 
 };
+
+template <class T>
+class Test : public PlayerStats<int>{
+    Test(T val) : PlayerStats<T>(val){};
+};
  
 template <typename T>
 void displayInventory(vector<T> &items){
